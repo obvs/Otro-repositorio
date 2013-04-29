@@ -1,0 +1,46 @@
+  Code.aspx C:\Users\vmrodriguez\Desktop\Code.aspx    -   C:\Users\fhunth\AppData\Local\Temp\Code.aspx a  <style type="text/css">
+    .style1
+    {
+        width: 100%;
+    }
+    .style2
+    {
+    }
+</style>
+
+<table class="style1">
+    <tr>
+        <td class="style2">
+            Nombre:</td>
+        <td>
+            <asp:TextBox ID="firstName" runat="server" Width="177px"></asp:TextBox>
+        </td>
+    </tr>
+    <tr>
+        <td class="style2">
+            Apellido:</td>
+        <td>
+            <asp:TextBox ID="lastName" runat="server" Width="177px"></asp:TextBox>
+        </td>
+    </tr>
+    <tr>
+        <td class="style2">
+            &nbsp;</td>
+        <td>
+            <asp:Button ID="bttnSearch" runat="server" onclick="bttnSearch_Click" 
+                Text="Buscar" />
+        </td>
+    </tr>
+    <tr>
+        <td class="style2" colspan="2">
+            <asp:GridView ID="gridSells" runat="server" EnableModelValidation="True" 
+                Height="101px" Width="500px">
+                <Columns>
+                    <asp:BoundField AccessibleHeaderText="article" FooterText="Articulo" 
+                        HeaderText="Articulo" />
+                    <asp:BoundField AccessibleHeaderText="cant" FooterText="Cantidad" 
+                        HeaderText="Cantidad" />
+                    <asp:BoundField AccessibleHeaderText="unitPrice" FooterText="Precio Unitario" 
+                        HeaderText="Precio Unitario" />
+                    <asp:BoundField AccessibleHeaderText="totalPrice" FooterText="Precio Total" 
+                        HeaderText=
