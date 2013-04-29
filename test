@@ -1,0 +1,69 @@
+package Test;
+
+import java.util.ArrayList;
+
+import junit.framework.Assert;
+import modelo.Cliente;
+import modelo.Factura;
+
+import org.junit.After;
+import org.junit.Before;
+import org.junit.Test;
+
+import bd.ClienteDatos;
+import bd.FacturaDatos;
+import bd.MySqlConnector;
+
+public class FacturaDatosTest {
+
+ private FacturaDatos facturaDatos = new FacturaDatos ();
+@Before
+ public void setUp ()
+ {
+  MySqlConnector conn = new MySqlConnector ();
+  conn.executeQuery("insert into cliente (dni, nombre, apellido, legajo )value(1, 'Carlos', 'Spadaro', '7')");
+  conn.executeQuery("insert into factura (numero, valor, cliente_dni)value (74, 7777,351222)");
+ }
+ @Test
+ public void testbuscarFacturaPorNumero ()
+ {
+  Factura factura = facturaDatos.buscarFacturaPorNumero(1);
+  Assert.assertNotNull(factura);
+ }
+ 
+ @Test
+ public void testbuscarTodas()
+ {
+  ArrayList<Factura> factura = facturaDatos.buscarTodos();
+  Assert.assertNotNull(factura);
+  Assert.assertFalse(factura.isEmpty()); 
+ }
+ 
+ @Test 
+ public void testguardarFactura ()
+ {
+  Cliente cliente = new Cliente (15, "PPP", "SSSS", "1");
+  Factura factura = new Factura (125,150,cliente);
+  boolean  resultado = facturaDatos.guardarFactura(factura);
+  Assert.assertNotNull(resultado);
+   
+  Assert.assertNotNull(factura);
+ }
+ 
+ @Test
+ public void testborrarFactura ()
+ {
+  Cliente cliente = new Cliente (16, "ooo", "uuu", "33");
+  Factura factura = new Factura (7,788, cliente);
+  boolean resultado = facturaDatos.borrarFactura(factura);
+  Assert.assertNotNull(resultado); 
+  
+ }
+ 
+ @After
+ public void testDown ()
+ {
+  MySqlConnector conn = new MySqlConnector ();
+  conn.executeQuery("Delate from factura");
+ }
+}
