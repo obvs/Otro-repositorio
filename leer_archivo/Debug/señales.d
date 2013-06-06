@@ -1,0 +1,1 @@
+señales.d: ../señales.c

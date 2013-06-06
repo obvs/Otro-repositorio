@@ -25,13 +25,13 @@ endif
 all: leer_archivo
 
 dependents:
-	-cd /home/utnso/workspace/commons/Debug && $(MAKE) all
+	-cd /home/utnso/git/Otro-repositorio/commons/Debug && $(MAKE) clean all
 
 # Tool invocations
-leer_archivo: $(OBJS) $(USER_OBJS) /home/utnso/workspace/commons/Debug/libcommons.so
+leer_archivo: $(OBJS) $(USER_OBJS) /home/utnso/git/Otro-repositorio/commons/Debug/libcommons.so
 	@echo 'Building target: $@'
 	@echo 'Invoking: GCC C Linker'
-	gcc -L"/home/utnso/workspace/commons/Debug" -o "leer_archivo" $(OBJS) $(USER_OBJS) $(LIBS)
+	gcc -L"/home/utnso/git/Otro-repositorio/commons/Debug" -o "leer_archivo" $(OBJS) $(USER_OBJS) $(LIBS)
 	@echo 'Finished building target: $@'
 	@echo ' '
 
@@ -42,6 +42,6 @@ clean:
 
 .PHONY: all clean dependents
 .SECONDARY:
-/home/utnso/workspace/commons/Debug/libcommons.so:
+/home/utnso/git/Otro-repositorio/commons/Debug/libcommons.so:
 
 -include ../makefile.targets

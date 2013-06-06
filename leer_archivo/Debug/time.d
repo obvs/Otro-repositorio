@@ -1,3 +1,4 @@
-time.d: ../time.c /home/utnso/workspace/commons/commons/temporal.h
+time.d: ../time.c \
+ /home/utnso/git/Otro-repositorio/commons/commons/temporal.h
 
-/home/utnso/workspace/commons/commons/temporal.h:
+/home/utnso/git/Otro-repositorio/commons/commons/temporal.h:

@@ -4,14 +4,12 @@
 #include <commons/string.h>
 #include <commons/collections/list.h>
 
-int main(void){
+int Cmain(void){
 
 	t_config *  archivo = config_create("/home/utnso//archivos_de_nivel/nivel1");
 
 	char * nombre = config_get_string_value(archivo,"Nombre");
-
 	char * caja1  = config_get_string_value(archivo,"caja1");
-
 	char * caja2  = config_get_string_value(archivo,"caja2");
     char * caja3  = config_get_string_value(archivo,"caja3");
 
